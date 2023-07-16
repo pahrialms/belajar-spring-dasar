@@ -14,10 +14,8 @@ pipeline {
                 sh ("mv go /usr/local")
                 sh ('echo "export GOPATH=$HOME/work" >> ~/.profile')
                 sh ('echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.profile')
-                dir ("/root/.profile") {
-                    sh "pwd"
-                }
-                sh ("source /root/.profile")
+                sh ("cd /root/.profile")
+                sh ("source .profile")
                 sh ("go version")
             }
         }
