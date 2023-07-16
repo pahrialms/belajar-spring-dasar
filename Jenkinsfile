@@ -12,7 +12,7 @@ pipeline {
     }
 
     stages {
-        stage('Parameter') {
+        stage('Preparation') {
           input {
             message "Can we deploy ?"
             ok "Yes, Of course"
@@ -28,6 +28,18 @@ pipeline {
                  echo "Fill your password here ${params.PASSWORD}"
               }
           }
+        }
+        stage('Build') {
+            steps {
+            withCredentials([usernamePassword(
+                credentialsId: "pahrial_rahasia",
+                usernameVariable: "USER",
+                passwordVariable: "PASSWORD"
+            )]) {
+             sh('echo "Releasae it with -u $USER -p $PASSWORD" > "release.txt"')
+            }
+            }
+
         }
     }
     post {
