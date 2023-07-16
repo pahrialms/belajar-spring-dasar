@@ -3,11 +3,11 @@ pipeline {
     environment {
         AUTHOR = "Pahrial MS"
     }
-    parameters (
+    parameters {
         string(name: "NAME", defaultValue: "Guest", description: "What is your name")
         text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is your name")
         booleanParam(name: "DEPLOY", defaultValue: "false", description: "Need to deploy?")
-    )
+    }
 
     stages {
         stage('Parameter') {
