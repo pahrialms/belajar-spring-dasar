@@ -8,9 +8,9 @@ pipeline {
             }
         }
         stage('Dev') {
-            steps {
+            step {
                 echo 'Hello Dev'
-
+            }
         }
         stage('Pro') {
             steps {
