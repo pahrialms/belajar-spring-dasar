@@ -10,7 +10,7 @@ pipeline {
         stage('Dev') {
             steps {
                 echo 'Hello Dev'
-                sleep '5'
+                sleep(5)
             }
         }
         stage('Pro') {
