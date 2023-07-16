@@ -10,7 +10,7 @@ pipeline {
         stage('Dev') {
             steps {
                 echo 'Hello Dev'
-            }
+
         }
         stage('Pro') {
             steps {
