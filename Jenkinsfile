@@ -3,6 +3,11 @@ pipeline {
     environment {
         AUTHOR = "Pahrial MS"
     }
+    input {
+        message "Can we deploy ?"
+        ok "Yes, Of course"
+        submitter "pahr"
+    }
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "What is your name")
         text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is your name")
