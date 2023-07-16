@@ -11,11 +11,12 @@ pipeline {
             ok "Yes, Of course"
             submitter "pahr"
           }
-            steps {
-                script {
-                    for (int i = 0; i < 10; i++)
-                    echo("Script ${i}")
-            }
+          steps {
+              script {
+                 for (int i = 0; i < 10; i++)
+                 echo("Script ${i}")
+              }
+          }
         }
     }
     post {
