@@ -8,6 +8,7 @@ pipeline {
         text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is your name?")
         booleanParam(name: "DEPLOY", defaultValue: "false", description: "Need to deploy?")
         choice(name: "SOSMED", choices: ['Facebook', 'Twitter', 'Instagram'], description: "What is your sosmed" )
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'A secret password')
     }
 
     stages {
@@ -24,6 +25,7 @@ pipeline {
                  echo "Hello ${params.DESCRIPTION}"
                  echo "Hello ${params.DEPLOY}"
                  echo "Hello ${params.SOSMED}"
+                 echo "Fill your password here ${params.PASSWORD}"
               }
           }
         }
