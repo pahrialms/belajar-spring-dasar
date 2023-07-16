@@ -11,10 +11,13 @@ pipeline {
                 sh ("wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz")
                 sh ("tar xvf go1.18.3.linux-amd64.tar.gz && chown -R root:root ./go")
                 sh ("mv go /usr/local")
-                sh '''cat <<EOF>> ~/.profile
-                export GOPATH=$HOME/work
-                export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-                EOF'''
+                sh '''
+                    cat <<EOF>> ~/.profile
+                    export GOPATH=$HOME/work
+                    export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+                    EOF
+                ENDSSH'
+                    '''
                 sh ("source ~/.profile")
                 sh ("go version")
             }
