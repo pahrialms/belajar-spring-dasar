@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Hello Test'
             }
+        }
         stage('Dev') {
             steps {
                 echo 'Hello Dev'
@@ -15,7 +16,6 @@ pipeline {
             steps {
                 echo 'Hello Pro'
             }
-        }
         }
     }
     post {
