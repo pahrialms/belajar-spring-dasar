@@ -32,7 +32,7 @@ pipeline {
         stage('Build') {
             steps {
             withCredentials([usernamePassword(
-                credentialsId: "pahrial_rahasia",
+                credentialsId: "c293cd64-7904-42fa-af2b-d1ad05d1957a",
                 usernameVariable: "USER",
                 passwordVariable: "PASSWORD"
             )]) {
