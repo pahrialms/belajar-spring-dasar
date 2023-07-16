@@ -3,6 +3,12 @@ pipeline {
     environment {
         AUTHOR = "Pahrial MS"
     }
+    parameters {
+        string(name: "NAME", defaultValue: "Guest", description: "What is your name?")
+        text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is your name?")
+        booleanParam(name: "DEPLOY", defaultValue: "false", description: "Need to deploy?")
+        choice(name: "SOSMED", choices: ['Facebook', 'Twitter', 'Instagram'], description: "What is your sosmed" )
+    }
 
     stages {
         stage('Parameter') {
@@ -13,8 +19,11 @@ pipeline {
           }
           steps {
               script {
-                 for (int i = 0; i < 10; i++)
-                 echo("Script ${i}")
+                 echo "Hello ${env.AUTHOR}"
+                 echo "Hello ${params.NAME}"
+                 echo "Hello ${params.DESCRIPTION}"
+                 echo "Hello ${params.DEPLOY}"
+                 echo "Hello ${params.SOSMED}"
               }
           }
         }
