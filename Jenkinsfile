@@ -2,10 +2,20 @@ pipeline {
     agent { label 'node-dev' }
 
     stages {
-        stage('Hello') {
+        stage('Test') {
             steps {
-                echo 'Hello World'
+                echo 'Hello Test'
             }
+        stage('Dev') {
+            steps {
+                echo 'Hello Dev'
+            }
+        }
+        stage('Pro') {
+            steps {
+                echo 'Hello Pro'
+            }
+        }
         }
     }
     post {
