@@ -3,28 +3,18 @@ pipeline {
     environment {
         AUTHOR = "Pahrial MS"
     }
-    input {
-        message "Can we deploy ?"
-        ok "Yes, Of course"
-        submitter "pahr"
-    }
-    parameters {
-        string(name: "NAME", defaultValue: "Guest", description: "What is your name")
-        text(name: "DESCRIPTION", defaultValue: "Guest", description: "What is your name")
-        booleanParam(name: "DEPLOY", defaultValue: "false", description: "Need to deploy?")
-    }
 
     stages {
         stage('Parameter') {
+          input {
+            message "Can we deploy ?"
+            ok "Yes, Of course"
+            submitter "pahr"
+          }
             steps {
                 script {
                     for (int i = 0; i < 10; i++)
                     echo("Script ${i}")
-                }
-                echo "Hello ${env.AUTHOR}"
-                echo "Hello ${params.NAME}"
-                echo "Hello ${params.DESCRIPTION}"
-                echo "Hello ${params.DEPLOY}"
             }
         }
     }
