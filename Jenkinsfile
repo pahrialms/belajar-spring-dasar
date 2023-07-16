@@ -5,17 +5,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Hello Test'
-            }
-        }
-        stage('Dev') {
-            steps {
-                echo 'Hello Dev'
-                sleep(5)
-            }
-        }
-        stage('Pro') {
-            steps {
-                echo 'Hello Pro'
+                sh ("apt update -y")
+                sh ("apt install net-tools -y")
             }
         }
     }
